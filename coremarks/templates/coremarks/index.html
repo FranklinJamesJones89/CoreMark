@@ -1,0 +1,38 @@
+{% extends 'coremarks/components/base.html' %}
+
+{% block content %}
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.core-mark.com/wp-content/uploads/2023/01/Welcome_FBgraphic_CM_EB2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.core-mark.com/wp-content/uploads/2021/08/FRHeaderNew-1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.core-mark.com/wp-content/uploads/2017/07/Home-page-Version-Cat-Man.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.core-mark.com/wp-content/uploads/2017/07/Home-page-Technology.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.core-mark.com/wp-content/uploads/2022/02/Core-Mark-8742-scaled.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+ {% for day in days %}
+<li><a href="{% url 'coremarks:day_detail' pk=day.pk %}">{{ day.date }}</a></li>
+{% endfor %}
+
+
+{% endblock content %}

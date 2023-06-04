@@ -1,0 +1,28 @@
+{% extends 'coremarks/components/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="day-detail-header">Employees for {{ day.date }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Shift</th>
+                <th>Items Picked</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employeeday in day.employeeday_set.all %}
+            <tr>
+                <td>{{ employeeday.id }}</td>
+                <td>{{ employeeday.employee }}</td>
+                <td>{{ employeeday.shift }}</td>
+                <td>{{ employeeday.items_picked }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
+
+
